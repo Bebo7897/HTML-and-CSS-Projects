@@ -1,0 +1,12 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+
+.rsvp {
+    display: block;
+    width: 300px;
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
