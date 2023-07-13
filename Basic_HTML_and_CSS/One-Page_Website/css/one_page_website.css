@@ -3,7 +3,7 @@ body {
     font-size: large;
 }
 
-.rsvp {
+input[type="text"] {
     display: block;
     width: 300px;
     margin: 2px;
