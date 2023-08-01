@@ -4,6 +4,7 @@
 		<title>Muscle Car Mission</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="./css/one_page_website.css">
+		<script src="js/one_page_website.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -20,82 +21,102 @@
 		<div class="myStyle" id="home">
 			<div class="video-container">
 				<h1>The Muscle Car Mission</h1>
-				<iframe width="720" height="540" src="https://www.youtube.com/embed/CjkiRBoKuvo?&autoplay=1&mute=1&controls=0&loop=1"></iframe>
+				<iframe class="vid" width="720" height="540" src="https://www.youtube.com/embed/CjkiRBoKuvo?&autoplay=1&mute=1&controls=0&loop=1"></iframe>
 			</div>
 		</div>
 		<!-- END HOME -->
 		
 		<!-- GALLERY -->
-		<section>
-			<div class="font_1" id="gallery">
-				<h1>Gallery</h1>
-				<div>
-				
-					<!-- PHOTO-CONTAINER 1 -->
-					<div>
-						<div>
-							<img src="./images/442.png" alt="Blue Oldsmobile 442" width="300" height="200">
-							<div>
-								<h3>Oldsmobile 442</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 1 -->
-					
-					<!-- PHOTO-CONTAINER 2 -->
-					<div>
-						<div>
-							<img src="./images/camaro.png" alt="Black Chevy Camaro" width="300" height="200">
-							<div>
-								<h3>Chevy Camaro</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 2 -->
-					
-					<!-- PHOTO-CONTAINER 3 -->
-					<div>
-						<div>
-							<img src="./images/charger.png" alt="Black Dodge Charger" width="300" height="200" >
-							<div>
-								<h3>Dodge Charger</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 3 -->
-					
-					<!-- PHOTO-CONTAINER 4 -->
-					<div>
-						<div>
-							<img src="./images/cuda.png" alt="Black Plymouth Barracuda" width="300" height="200">
-							<div>
-								<h3>Plymouth Barracuda</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 4 -->
-					
-					<!-- PHOTO-CONTAINER 5 -->
-					<div>
-						<div>
-							<img src="./images/gto.png" alt="Orange Pontiac GTO" width="300" height="200">
-							<div>
-								<h3>Pontiac GTO</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 5 -->
-					
-					<!-- PHOTO-CONTAINER 6 -->
-					<div>
-						<div>
-							<img src="./images/shelby.png" alt="Red Ford Mustang" width="300" height="200">
-							<div>
-								<h3>Ford Mustang</h3>
-							</div>
-						</div>
-					</div>
-					<!-- END PHOTO-CONTAINER 6 -->										
+		<section id="gallery">
+			<!-- Images used to open the lightbox -->
+			<div class="row">
+				<div class="column">
+					<img src="thumbs/442.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="thumbs/camaro.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="thumbs/charger.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="thumbs/cuda.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="thumbs/gto.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="thumbs/shelby.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
+				</div>
+			</div>
+			
+			<!-- The Modal/Lightbox -->
+			<div id="myModal" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+			
+				<div class="mySlides">
+					<div class="numbertext">1 / 6</div>
+					<img src="images/442.png" style="width:100%">
+				</div>
+			
+				<div class="mySlides">
+					<div class="numbertext">2 / 6</div>
+					<img src="images/camaro.png" style="width:100%">
+				</div>
+			
+				<div class="mySlides">
+					<div class="numbertext">3 / 6</div>
+					<img src="images/charger.png" style="width:100%">
+				</div>
+			
+				<div class="mySlides">
+					<div class="numbertext">4 / 6</div>
+					<img src="images/cuda.png" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+					<div class="numbertext">5 / 6</div>
+					<img src="images/gto.png" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+					<div class="numbertext">6 / 6</div>
+					<img src="images/shelby.png" style="width:100%">
+				</div>
+			
+				<!-- Next/previous controls -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+				<!-- Caption text -->
+				<div class="caption-container">
+					<p id="caption"></p>
+				</div>
+			
+				<!-- Thumbnail image controls -->
+				<div class="column">
+					<img class="demo" src="thumbs/442.png" onclick="currentSlide(1)" alt="442">
+				</div>
+			
+				<div class="column">
+					<img class="demo" src="thumbs/camaro.png" onclick="currentSlide(2)" alt="Camaro">
+				</div>
+			
+				<div class="column">
+					<img class="demo" src="thumbs/charger.png" onclick="currentSlide(3)" alt="Charger">
+				</div>
+			
+				<div class="column">
+					<img class="demo" src="thumbs/cuda.png" onclick="currentSlide(4)" alt="Cuda">
+				</div>
+
+				<div class="column">
+					<img class="demo" src="thumbs/gto.png" onclick="currentSlide(5)" alt="GTO">
+				</div>
+
+				<div class="column">
+					<img class="demo" src="thumbs/shelby.png" onclick="currentSlide(6)" alt="Shelby">
 				</div>
 			</div>
 		</section>
